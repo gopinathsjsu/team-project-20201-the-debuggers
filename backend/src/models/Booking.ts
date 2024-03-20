@@ -1,5 +1,38 @@
 import pool from '../config/database';
 import { Booking, BookingCreateInput, BookingUpdateInput } from '../types/booking';
+import { z } from 'zod';
+
+export const BookingSchema = z.object({
+  id: z.number().optional(),
+  userId: z.number(),
+  restaurantId: z.number(),
+  date: z.date(),
+  time: z.string(),
+  partySize: z.number().min(1),
+  status: z.enum(['pending', 'confirmed', 'cancelled']),
+  specialRequests: z.string().optional(),
+  createdAt: z.date().optional(),
+  updatedAt: z.date().optional(),
+});
+
+export type Booking = z.infer<typeof BookingSchema>;
+
+export const BookingCreationSchema = BookingSchema.omit({
+  id: true,
+  status: true,
+  createdAt: true,
+  updatedAt: true,
+}).extend({
+  status: z.literal('pending'),
+});
+
+export type BookingCreation = z.infer<typeof BookingCreationSchema>;
+
+export const BookingUpdateSchema = z.object({
+  status: z.enum(['confirmed', 'cancelled']),
+});
+
+export type BookingUpdate = z.infer<typeof BookingUpdateSchema>;
 
 export class BookingModel {
   // Create a new booking

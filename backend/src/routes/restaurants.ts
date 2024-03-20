@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { body } from 'express-validator';
-import { validate } from '../middleware/validation';
+import { validateRequest } from '../middleware/validation';
 import { isRestaurantOwner } from '../middleware/restaurantAuth';
 import {
   createRestaurant,
@@ -26,7 +26,7 @@ router.post(
       .isIn(['low', 'medium', 'high'])
       .withMessage('Price range must be low, medium, or high'),
   ],
-  validate,
+  validateRequest,
   createRestaurant
 );
 
@@ -53,7 +53,7 @@ router.put(
       .isIn(['low', 'medium', 'high'])
       .withMessage('Price range must be low, medium, or high'),
   ],
-  validate,
+  validateRequest,
   updateRestaurant
 );
 

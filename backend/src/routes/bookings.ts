@@ -9,10 +9,17 @@ import {
   getUserBookings,
   getRestaurantBookings,
   updateBookingStatus,
+  getBookings,
+  getBookingById,
+  cancelBooking,
 } from '../controllers/bookingController';
 import { isRestaurantOwner } from '../middleware/restaurantAuth';
+import { authenticate } from '../middleware/auth';
 
 const router = Router();
+
+// All routes require authentication
+router.use(authenticate);
 
 // Create booking
 router.post(
@@ -66,5 +73,9 @@ router.patch(
 
 // Delete booking
 router.delete('/:id', deleteBooking);
+
+router.get('/', getBookings);
+router.get('/:id', getBookingById);
+router.delete('/:id', cancelBooking);
 
 export default router; 

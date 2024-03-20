@@ -1,5 +1,6 @@
 import { Pool } from 'pg';
 import bcrypt from 'bcrypt';
+import { z } from 'zod';
 
 export enum UserRole {
   CUSTOMER = 'customer',
@@ -16,6 +17,33 @@ export interface User {
   phone?: string;
   created_at: Date;
 }
+
+export const UserSchema = z.object({
+  id: z.number().optional(),
+  email: z.string().email(),
+  password: z.string().min(6),
+  name: z.string().min(2),
+  role: z.enum(['user', 'restaurant_owner', 'admin']),
+  createdAt: z.date().optional(),
+  updatedAt: z.date().optional(),
+});
+
+export type User = z.infer<typeof UserSchema>;
+
+export const UserLoginSchema = UserSchema.pick({
+  email: true,
+  password: true,
+});
+
+export type UserLogin = z.infer<typeof UserLoginSchema>;
+
+export const UserRegistrationSchema = UserSchema.omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+});
+
+export type UserRegistration = z.infer<typeof UserRegistrationSchema>;
 
 export class UserModel {
   constructor(private pool: Pool) {}

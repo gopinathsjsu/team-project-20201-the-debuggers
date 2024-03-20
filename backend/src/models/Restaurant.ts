@@ -1,4 +1,5 @@
 import { Pool } from 'pg';
+import { z } from 'zod';
 
 export enum CuisineType {
   ITALIAN = 'Italian',
@@ -46,6 +47,37 @@ export interface Restaurant {
   created_at: Date;
   updated_at: Date;
 }
+
+export const RestaurantSchema = z.object({
+  id: z.number().optional(),
+  name: z.string().min(2),
+  description: z.string(),
+  address: z.string(),
+  cuisine: z.string(),
+  priceRange: z.enum(['$', '$$', '$$$', '$$$$']),
+  rating: z.number().min(0).max(5).optional(),
+  ownerId: z.number(),
+  openingHours: z.string(),
+  closingHours: z.string(),
+  capacity: z.number().min(1),
+  createdAt: z.date().optional(),
+  updatedAt: z.date().optional(),
+});
+
+export type Restaurant = z.infer<typeof RestaurantSchema>;
+
+export const RestaurantCreationSchema = RestaurantSchema.omit({
+  id: true,
+  rating: true,
+  createdAt: true,
+  updatedAt: true,
+});
+
+export type RestaurantCreation = z.infer<typeof RestaurantCreationSchema>;
+
+export const RestaurantUpdateSchema = RestaurantCreationSchema.partial();
+
+export type RestaurantUpdate = z.infer<typeof RestaurantUpdateSchema>;
 
 export class RestaurantModel {
   constructor(private pool: Pool) {}
