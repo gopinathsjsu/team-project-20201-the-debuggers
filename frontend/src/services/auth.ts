@@ -1,51 +1,54 @@
-import { api } from '../lib/api';
-import {
-  AuthResponse,
-  LoginCredentials,
-  RegisterData,
-  ResetPasswordData,
-  UpdatePasswordData,
-  User,
-} from '../types/auth';
+import { LoginCredentials, RegisterData, AuthResponse } from '../types/auth';
+import { apiClient } from '../lib/api';
 
-export class AuthService {
-  static async login(credentials: LoginCredentials): Promise<AuthResponse> {
-    const response = await api.post<AuthResponse>('/auth/login', credentials);
+class AuthService {
+  private static instance: AuthService;
+  private readonly baseUrl = '/auth';
+
+  private constructor() {}
+
+  public static getInstance(): AuthService {
+    if (!AuthService.instance) {
+      AuthService.instance = new AuthService();
+    }
+    return AuthService.instance;
+  }
+
+  async login(credentials: LoginCredentials): Promise<AuthResponse> {
+    const response = await apiClient.post<AuthResponse>(
+      `${this.baseUrl}/login`,
+      credentials
+    );
     return response.data;
   }
 
-  static async register(data: RegisterData): Promise<AuthResponse> {
-    const response = await api.post<AuthResponse>('/auth/register', data);
+  async register(data: RegisterData): Promise<AuthResponse> {
+    const response = await apiClient.post<AuthResponse>(
+      `${this.baseUrl}/register`,
+      data
+    );
     return response.data;
   }
 
-  static async getCurrentUser(): Promise<User> {
-    const response = await api.get<{ user: User }>('/auth/me');
-    return response.data.user;
+  async logout(): Promise<void> {
+    await apiClient.post(`${this.baseUrl}/logout`);
   }
 
-  static async resetPassword(data: ResetPasswordData): Promise<void> {
-    await api.post('/auth/reset-password', data);
-  }
-
-  static async updatePassword(data: UpdatePasswordData): Promise<void> {
-    await api.post('/auth/update-password', data);
-  }
-
-  static async refreshToken(): Promise<AuthResponse> {
-    const response = await api.post<AuthResponse>('/auth/refresh');
+  async refreshToken(): Promise<AuthResponse> {
+    const response = await apiClient.post<AuthResponse>(
+      `${this.baseUrl}/refresh-token`
+    );
     return response.data;
   }
 
-  static async logout(): Promise<void> {
-    await api.post('/auth/logout');
+  async validateToken(token: string): Promise<boolean> {
+    try {
+      await apiClient.post(`${this.baseUrl}/validate-token`, { token });
+      return true;
+    } catch {
+      return false;
+    }
   }
+}
 
-  static async verifyEmail(token: string): Promise<void> {
-    await api.post(`/auth/verify-email/${token}`);
-  }
-
-  static async resendVerificationEmail(): Promise<void> {
-    await api.post('/auth/resend-verification');
-  }
-} 
+export const authService = AuthService.getInstance(); 

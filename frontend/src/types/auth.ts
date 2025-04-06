@@ -1,15 +1,9 @@
 export interface User {
   id: string;
   email: string;
-  name: string;
-  role: UserRole;
-  createdAt: string;
-  updatedAt: string;
-}
-
-export enum UserRole {
-  ADMIN = 'ADMIN',
-  USER = 'USER',
+  firstName: string;
+  lastName: string;
+  role: 'user' | 'admin';
 }
 
 export interface AuthState {
@@ -26,7 +20,8 @@ export interface LoginCredentials {
 }
 
 export interface RegisterData extends LoginCredentials {
-  name: string;
+  firstName: string;
+  lastName: string;
 }
 
 export interface AuthResponse {
