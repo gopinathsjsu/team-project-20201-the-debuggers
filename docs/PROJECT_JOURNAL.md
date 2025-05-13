@@ -115,7 +115,7 @@ The team embraced continuous feedback as a core practice:
   - None
 
 ## Sprint Backlog
-[Link to Sprint Backlog Sheet](https://docs.google.com/spreadsheets/d/your-sprint-backlog-id)
+[Link to Sprint Backlog Sheet](https://docs.google.com/spreadsheets/d/1jYeMDr10onqj0fUK9yi_xaJ_ibosKOfa-D4ddXmzcAI/edit?gid=0#gid=0)
 
 ### Sprint 1 Stories
 1. User Authentication System (13 points)
@@ -145,7 +145,7 @@ The team embraced continuous feedback as a core practice:
 Total Sprint Points: 31
 
 ## Burndown Chart
-[Link to Burndown Chart](https://docs.google.com/spreadsheets/d/your-burndown-chart-id)
+[Link to Burndown Chart](https://docs.google.com/spreadsheets/d/1jYeMDr10onqj0fUK9yi_xaJ_ibosKOfa-D4ddXmzcAI/edit?gid=220293019#gid=220293019)
 
 Sprint 1 Burndown:
 - Start: 31 points
