@@ -8,7 +8,7 @@ export const register = async (req: Request, res: Response) => {
   const { email, password, name, role } = req.body;
 
   try {
-    // Check if user exists
+    // Check if user exist
     const [existingUsers] = await db.query('SELECT * FROM users WHERE email = ?', [email]);
     if ((existingUsers as any[]).length > 0) {
       throw { statusCode: 400, message: 'User already exists' } as CustomError;
