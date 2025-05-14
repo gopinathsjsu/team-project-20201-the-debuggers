@@ -4,7 +4,7 @@ import { config } from 'dotenv';
 import { authRouter } from './routes/auth';
 import { errorHandler } from './middleware/errorHandler';
 
-// Load environment variables
+// Load environment variable
 config();
 
 const app = express();
