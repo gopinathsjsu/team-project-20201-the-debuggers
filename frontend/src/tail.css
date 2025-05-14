@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Restaurant Reservation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="bg-red-600 text-white p-6 shadow-md">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl font-bold">Gourmet Bistro</h1>
+      <p class="text-sm mt-1">Reserve your table in just a few clicks</p>
+    </div>
+  </header>
+
+  <!-- Reservation Form -->
+  <main class="max-w-xl mx-auto bg-white mt-10 p-8 rounded-2xl shadow-lg">
+    <h2 class="text-2xl font-semibold mb-6 text-center">Reservation Form</h2>
+
+    <form class="space-y-5">
+      <div>
+        <label class="block font-medium mb-1" for="name">Name</label>
+        <input type="text" id="name" placeholder="Your full name" class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-red-400">
+      </div>
+
+      <div>
+        <label class="block font-medium mb-1" for="email">Email</label>
+        <input type="email" id="email" placeholder="example@mail.com" class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-red-400">
+      </div>
+
+      <div>
+        <label class="block font-medium mb-1" for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="+1 234 567 890" class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-red-400">
+      </div>
+
+      <div>
+        <label class="block font-medium mb-1" for="date">Date</label>
+        <input type="date" id="date" class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-red-400">
+      </div>
+
+      <div>
+        <label class="block font-medium mb-1" for="time">Time</label>
+        <input type="time" id="time" class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-red-400">
+      </div>
+
+      <div>
+        <label class="block font-medium mb-1" for="guests">Number of Guests</label>
+        <select id="guests" class="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-red-400">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5+</option>
+        </select>
+      </div>
+
+      <button type="submit" class="w-full bg-red-600 text-white font-semibold py-3 rounded-xl hover:bg-red-700 transition duration-200">Reserve Table</button>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center mt-10 text-gray-500 text-sm">
+    &copy; 2025 Gourmet Bistro. All rights reserved.
+  </footer>
+
+</body>
+</html>

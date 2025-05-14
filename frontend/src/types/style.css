@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Styles (Optional) */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+input::placeholder {
+  color: #9ca3af; /* Tailwind's gray-400 */
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.5); /* red-400 glow */
+}
