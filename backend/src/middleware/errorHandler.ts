@@ -4,7 +4,6 @@ export interface CustomError extends Error {
   statusCode?: number;
 }
 
-
 export const errorHandler = (
   err: CustomError,
   req: Request,
