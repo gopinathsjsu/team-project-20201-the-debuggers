@@ -33,7 +33,7 @@
 ![Component Diagram](Diagrams/component_diagram.jpeg)
 
 #### Deployment Architecture
-![Deployment Diagram](Diagrams/deployment_diagram.jpeg)
+![AWS Deployment Diagram](Diagrams/aws_deployment_image.png)
 
 
 ## Design Decisions
