@@ -5,7 +5,7 @@
 | Name | Student ID |
 |------|------------|
 | [Nikhil Dupally] | [018325736] |
-| [Rithwik Reddy Eedula] | [018321342] |
+| [Rithwik Reddy Eedula] | [018292664] |
 | [Vijaya Sharavan Reddy] | [018321342] |
 | [Venkata Gowtham Jalam] | [018315791] |
 
