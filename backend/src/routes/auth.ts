@@ -9,4 +9,5 @@ router.post('/register', validateAuth, register);
 router.post('/login', validateAuth, login);
 router.get('/profile', authenticate, getProfile);
 
+
 export default router;
