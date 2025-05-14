@@ -1,28 +1,10 @@
 # Project Journal
 
-## XP Core Values
-
-### Communication
-Throughout the project, our team maintained strong communication channels and practices:
-- Weekly Scrum meetings every Monday at 10 AM PST
-- Async updates via GitHub discussions and Slack
-- Code review feedback sessions
-- Pair programming sessions for complex features
-- Regular technical documentation updates
-
-### Feedback
-The team embraced continuous feedback as a core practice:
-- Immediate code review responses
-- Regular testing and QA feedback loops
-- User interface reviews and iterations
-- Sprint retrospectives for process improvement
-- Continuous integration feedback through automated tests
-
 ## Sprint Details
 
 ### Sprint 1 (March 5 - March 19)
 
-#### Team Member A (Frontend Structure & Routing)
+#### Nikhil Dupally (Frontend Structure & Routing)
 **Weekly Report - Week 1 (March 5 - March 12)**
 - Tasks Completed:
   - Set up initial React project structure
@@ -45,7 +27,7 @@ The team embraced continuous feedback as a core practice:
 - Blocked Tasks:
   - None
 
-#### Team Member B (Backend Integration)
+#### Rithwik Reddy Eedula (Backend Integration)
 **Weekly Report - Week 1 (March 5 - March 12)**
 - Tasks Completed:
   - Initial Express.js setup
@@ -68,7 +50,7 @@ The team embraced continuous feedback as a core practice:
 - Blocked Tasks:
   - None
 
-#### Team Member C (Frontend Features & UI)
+#### Venkata Gowtham Jalam (Frontend Features & UI)
 **Weekly Report - Week 1 (March 5 - March 12)**
 - Tasks Completed:
   - Set up Tailwind CSS
@@ -91,7 +73,7 @@ The team embraced continuous feedback as a core practice:
 - Blocked Tasks:
   - None
 
-#### Team Member D (API Integration & State Management)
+#### Vijaya Sharavan Reddy (API Integration & State Management)
 **Weekly Report - Week 1 (March 5 - March 12)**
 - Tasks Completed:
   - Set up API client structure

@@ -9,14 +9,14 @@
   - [x] Set up JWT authentication
   - [x] Create user model
   - [x] Implement auth middleware
-  - Assigned to: Team Member B
+  - Assigned to: Rithwik Reddy Eedula
   - Status: Completed
 
 - [x] Frontend Authentication Flow (8 points)
   - [x] Create login/register forms
   - [x] Implement auth context
   - [x] Add protected routes
-  - Assigned to: Team Member A & D
+  - Assigned to: Nikhil Dupally & Vijaya Sharavan Reddy
   - Status: Completed
 
 #### Basic UI Components (8 points)
@@ -24,14 +24,14 @@
   - [x] Set up Tailwind CSS
   - [x] Create color palette
   - [x] Define typography
-  - Assigned to: Team Member C
+  - Assigned to: Venkata Gowtham Jalam
   - Status: Completed
 
 - [x] Core Components (5 points)
   - [x] Create button components
   - [x] Implement form inputs
   - [x] Add layout components
-  - Assigned to: Team Member C
+  - Assigned to: Venkata Gowtham Jalam
   - Status: Completed
 
 #### API Integration (5 points)
@@ -39,26 +39,26 @@
   - [x] Create API client
   - [x] Add interceptors
   - [x] Implement error handling
-  - Assigned to: Team Member D
+  - Assigned to: Vijaya Sharavan Reddy
   - Status: Completed
 
 - [x] Authentication Integration (2 points)
   - [x] Connect login/register
   - [x] Add token management
-  - Assigned to: Team Member D
+  - Assigned to: Vijaya Sharavan Reddy
   - Status: Completed
 
 #### Routing Structure (5 points)
 - [x] Basic Routing (2 points)
   - [x] Set up router
   - [x] Create route config
-  - Assigned to: Team Member A
+  - Assigned to: Nikhil Dupally
   - Status: Completed
 
 - [x] Protected Routes (3 points)
   - [x] Implement auth guards
   - [x] Add redirect logic
-  - Assigned to: Team Member A
+  - Assigned to: Nikhil Dupally
   - Status: Completed
 
 ### Sprint Velocity
